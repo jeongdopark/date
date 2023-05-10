@@ -7,7 +7,7 @@ const Center = styled.div`
   margin: 0 auto;
   justify-content: center;
   align-items: center;
-  background-color: aqua;
+  background-color: #ffffe9;
 `;
 
 export const S = {

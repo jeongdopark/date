@@ -1,5 +1,13 @@
-const SignUp = () => {
-  return <div>SIGNUP</div>;
-};
+import SignUpForm from '../../components/SignUpForm'
+import { S } from './SignUp.styled'
 
-export default SignUp;
+const SignIn = () => {
+  return (
+    <S.Container>
+      <S.Title>Sign Up</S.Title>
+      <SignUpForm />
+    </S.Container>
+  )
+}
+
+export default SignIn

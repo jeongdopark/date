@@ -3,13 +3,13 @@ import { useRef, useState, useCallback } from 'react'
 export const useValidate = () => {
   const [inputValue, setInputValue] = useState({
     nickname: '',
-    email: '',
+    userId: '',
     password: '',
   })
   const message = useRef({
     value: {
       nickname: '',
-      email: '',
+      userId: '',
       password: '',
     },
   })
@@ -20,7 +20,7 @@ export const useValidate = () => {
       setInputValue({ ...inputValue, [name]: value })
 
       switch (name) {
-        case 'email':
+        case 'userId':
           if (value.length < 5 && value.length !== 0) {
             message.current.value[
               name

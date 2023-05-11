@@ -2,8 +2,9 @@ import { S } from './style'
 import { useNavigate } from 'react-router'
 import { useValidate } from '../hook/useValidate'
 const SignInForm = () => {
-  const navigate = useNavigate()
   const [inputValue, inputOnChange, warnMessage] = useValidate()
+
+  const navigate = useNavigate()
 
   return (
     <S.FormContainer>
@@ -21,8 +22,7 @@ const SignInForm = () => {
         placeholder="비밀번호를 입력해 주세요."
       />
       <span>{warnMessage.current.value['password']}</span>
-      <S.Button>Login</S.Button>
-      <S.Button onClick={() => navigate('/signUp')}>Go Sign Up</S.Button>
+      <S.Button>SignIn</S.Button>
     </S.FormContainer>
   )
 }

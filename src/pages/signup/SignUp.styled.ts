@@ -1,5 +1,8 @@
 import styled from 'styled-components'
-import { StyledCommonContainer } from '../../style/common.styled'
+import {
+  StyledCommonContainer,
+  StyledCommonButton,
+} from '../../style/common.styled'
 
 const Container = styled(StyledCommonContainer)`
   background-color: antiquewhite;
@@ -12,7 +15,12 @@ const Title = styled.h2`
   margin-bottom: 40px;
 `
 
+const Button = styled(StyledCommonButton)`
+  margin-bottom: 20px;
+`
+
 export const S = {
   Title,
   Container,
+  Button,
 }

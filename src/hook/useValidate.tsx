@@ -31,8 +31,18 @@ export const useValidate = () => {
           break
         case 'password':
           if (value.length < 5 && value.length !== 0) {
-            message.current.value[name] =
-              '비밀번호는 5자 이상으로 입력해 주세요.'
+            message.current.value[
+              name
+            ] = `${name}는 5자 이상으로 입력해 주세요.`
+          } else {
+            message.current.value[name] = ''
+          }
+          break
+        case 'nickname':
+          if (value.length < 5 && value.length !== 0) {
+            message.current.value[
+              name
+            ] = `${name}는 5자 이상으로 입력해 주세요.`
           } else {
             message.current.value[name] = ''
           }

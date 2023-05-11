@@ -9,7 +9,7 @@ const Title = styled.h2`
   font-weight: 700;
   font-size: 1.5rem;
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
 `
 
 export const S = {

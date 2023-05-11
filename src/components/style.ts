@@ -6,12 +6,18 @@ import {
   StyledCommonButton,
 } from '../style/common.styled'
 
-const FormContainer = styled(StyledCommonFormContainer)``
+const FormContainer = styled(StyledCommonFormContainer)`
+  span {
+    height: 20px;
+    margin-bottom: 20px;
+    color: red;
+  }
+`
 const Title = styled(StyledCommonTitle)`
   margin-bottom: 10px;
 `
 const Input = styled(StyledCommonInput)`
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 `
 const Button = styled(StyledCommonButton)`
   margin-bottom: 20px;

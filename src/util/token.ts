@@ -1,21 +1,20 @@
 import storage from './localStorage'
-import { STORAGE_KEY } from './constants'
 
 const token = {
-  get: () => {
+  get: (tokenType: string) => {
     if (!storage.isSupported) return ''
-    return storage.get<string>(STORAGE_KEY)
+    return storage.get<string>(tokenType)
   },
 
-  set: (newTokenValue: string) => {
+  set: (tokenType: string, newTokenValue: string) => {
     if (storage.isSupported) {
-      storage.set(STORAGE_KEY, newTokenValue)
+      storage.set(tokenType, newTokenValue)
     }
   },
 
-  clean: () => {
+  clean: (tokenType: string) => {
     if (storage.isSupported) {
-      storage.remove(STORAGE_KEY)
+      storage.remove(tokenType)
     }
   },
 }

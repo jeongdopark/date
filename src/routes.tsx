@@ -1,8 +1,9 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SignIn from "./pages/signin/SignIn";
-import SignUp from "./pages/signup/SignUp";
-import { S } from "./style/center.styled";
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import SignIn from './pages/SignIn'
+import SignUp from './pages/SignUp'
+import MyPage from './pages/MyPage'
+import { S } from './style/center.styled'
 
 const AppRouter: React.FC = (): JSX.Element => {
   return (
@@ -11,10 +12,11 @@ const AppRouter: React.FC = (): JSX.Element => {
         <Routes>
           <Route path="/signIn" element={<SignIn />} />
           <Route path="/signUp" element={<SignUp />} />
+          <Route path="/mypage" element={<MyPage />} />
         </Routes>
       </S.Center>
     </BrowserRouter>
-  );
-};
+  )
+}
 
-export default AppRouter;
+export default AppRouter

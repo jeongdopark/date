@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import {
   StyledCommonContainer,
   StyledCommonButton,
-} from '../../style/common.styled'
+} from '../style/common.styled'
 
 const Container = styled(StyledCommonContainer)`
   background-color: antiquewhite;

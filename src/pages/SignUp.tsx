@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router'
-import SignUpForm from '../../components/SignUpForm'
-import { S } from './SignUp.styled'
+import SignUpForm from '../components/Auth/SignUpForm'
+import { S } from './style'
 
 const SignIn = () => {
   const navigate = useNavigate()

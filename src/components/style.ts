@@ -23,9 +23,12 @@ const Button = styled(StyledCommonButton)`
   margin-bottom: 20px;
 `
 
+const WarnMessage = styled.span``
+
 export const S = {
   FormContainer,
   Title,
   Input,
   Button,
+  WarnMessage,
 }

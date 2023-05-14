@@ -14,3 +14,9 @@ export interface SignInResponse {
   accessToken: string
   refreshToken: string
 }
+
+export interface GetUserInfo {
+  nickname: string
+  profileImgUrl: string
+  userId: string
+}

@@ -2,7 +2,7 @@ import { S } from '../style'
 import { useValidate } from '../../hook/useValidate'
 import { signUp } from '../../api/auth'
 import { useNavigate } from 'react-router'
-import FormElement from '../common/FormElement'
+import FormElement from './FormElement'
 
 const SignUpForm = () => {
   const [inputValue, inputOnChange, warnMessage] = useValidate()

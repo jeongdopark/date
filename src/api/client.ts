@@ -2,6 +2,7 @@ import axios, { InternalAxiosRequestConfig, AxiosError } from 'axios'
 import token from '../util/token'
 import { ACCESS_TOKEN } from '../util/constants'
 import { APIError } from '../@types/api'
+
 export const instance = axios.create({
   baseURL: 'http://52.79.226.246',
   headers: { 'Content-Type': 'application/json' },
@@ -11,7 +12,7 @@ instance.interceptors.request.use(
   (config: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
     const accesstoken = token.get(ACCESS_TOKEN)
     if (accesstoken !== null)
-      Object.assign(config.headers, { Authoriz: `Bearer ${accesstoken}` })
+      Object.assign(config.headers, { authorization: `${accesstoken}` })
     return config
   },
 

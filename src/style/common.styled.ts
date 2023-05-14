@@ -30,4 +30,10 @@ export const StyledCommonFormContainer = styled.form`
   flex-direction: column;
 `
 
-export const StyledCommonButton = styled.button``
+export const StyledCommonButton = styled.button`
+  border: 1px solid black;
+  background-color: transparent;
+  cursor: pointer;
+  width: 100%;
+  height: 50px;
+`

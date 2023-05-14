@@ -7,7 +7,7 @@ class ApiUrl {
 
   static refreshToken = '/auth/refresh'
 
-  static updateUserInfo = '/auth/member'
+  static updateUserInfo = '/member'
 
   static userList = '/member/list'
 

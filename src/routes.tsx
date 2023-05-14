@@ -10,8 +10,8 @@ const AppRouter: React.FC = (): JSX.Element => {
     <BrowserRouter>
       <S.Center>
         <Routes>
-          <Route path="/signIn" element={<SignIn />} />
-          <Route path="/signUp" element={<SignUp />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/mypage" element={<MyPage />} />
         </Routes>
       </S.Center>

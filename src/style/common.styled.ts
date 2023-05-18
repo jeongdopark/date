@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const StyledCommonContainer = styled.div`
-  height: 70%;
-  width: 60%;
+  height: 50%;
+  width: 80%;
   border: 1px soild black;
   border-radius: 10px;
   padding: 50px;

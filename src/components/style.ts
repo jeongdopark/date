@@ -70,6 +70,15 @@ const ModalInnerContainer = styled.div`
   flex-direction: column;
 `
 
+const FooterContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  height: 50px;
+  padding: 0px 50px;
+  background-color: aqua;
+`
+
 export const S = {
   FormContainer,
   Title,
@@ -81,4 +90,5 @@ export const S = {
   EditContainer,
   ModalContainer,
   ModalInnerContainer,
+  FooterContainer,
 }

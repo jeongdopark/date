@@ -3,6 +3,7 @@ import ApiUrl from './ApiUrl'
 import { Auth } from '../@types/auth'
 import { APIResponse, SignInResponse } from '../@types/api'
 
+// 회원가입
 export const signUp = async ({ userId, password, nickname }: Auth) => {
   try {
     const res = await instance.post(ApiUrl.signUp, {
@@ -19,6 +20,7 @@ export const signUp = async ({ userId, password, nickname }: Auth) => {
   }
 }
 
+// 로그인
 export const signIn = async ({
   userId,
   password,

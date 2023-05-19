@@ -18,11 +18,8 @@ const useUpdateAffinityList = () => {
     receieve: [],
   })
   const [getListTrigger, setGetListTrigger] = useState<boolean>(true)
-  console.log(getListTrigger)
 
   useEffect(() => {
-    console.log('get')
-
     getAffinityList().then((res) => {
       setAffinityList((prevState) => {
         return {
@@ -34,8 +31,6 @@ const useUpdateAffinityList = () => {
   }, [getListTrigger])
 
   const onClickCancel = async (targetUser: string) => {
-    console.log(targetUser)
-
     try {
       await patchDisLike(targetUser)
     } finally {

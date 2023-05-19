@@ -10,7 +10,6 @@ const SignUpForm = () => {
   const navigate = useNavigate()
 
   const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
-    console.log(inputValue)
     e.preventDefault()
     const res = await signUp(inputValue)
     if (res.isSuccess) {

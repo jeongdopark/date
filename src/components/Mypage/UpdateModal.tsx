@@ -23,7 +23,6 @@ const UpdateModal = ({
       profileImgUrl: imgFile,
     })
     if (res?.isSuccess) {
-      console.log(res)
     }
   }
 

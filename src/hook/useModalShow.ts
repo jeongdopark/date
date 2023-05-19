@@ -10,9 +10,6 @@ export const useModalShow = <T extends HTMLElement>() => {
 
   useEffect(() => {
     const clickModalOutside = (event: MouseEvent) => {
-      console.log(modalShow)
-      console.log(modalRef.current?.contains(event.target as Node))
-
       if (
         modalShow === true &&
         !modalRef.current?.contains(event.target as Node)

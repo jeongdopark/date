@@ -8,7 +8,7 @@ const LikeList = () => {
     <S.Container>
       <S.TabContainer>
         {tab_obj.map((_, idx) => (
-          <S.TabElement onClick={() => onChangeTabIndex(idx)}>
+          <S.TabElement key={idx} onClick={() => onChangeTabIndex(idx)}>
             {tab_obj[idx].name}
           </S.TabElement>
         ))}

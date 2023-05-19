@@ -15,16 +15,22 @@ const FormContainer = styled(StyledCommonFormContainer)`
 `
 const Title = styled(StyledCommonTitle)`
   margin-bottom: 10px;
+  margin: 0 auto;
 `
 const Input = styled(StyledCommonInput)`
   margin-bottom: 10px;
   border: 1px solid black;
+  width: 50%;
+  margin: 0 auto;
 `
 const Button = styled(StyledCommonButton)`
+  margin: 0 auto;
   margin-bottom: 20px;
   width: 50%;
 `
-const WarnMessage = styled.span``
+const WarnMessage = styled.span`
+  margin: 0 auto;
+`
 
 const ImgContainer = styled.div`
   width: 100px;

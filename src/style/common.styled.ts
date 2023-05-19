@@ -4,10 +4,9 @@ export const StyledCommonContainer = styled.div`
   display: flex;
   align-items: start;
   flex-direction: column;
-  height: 80%;
+  height: 70%;
   width: 100%;
   border: 1px soild black;
-  border-radius: 10px;
 `
 
 export const StyledCommonInput = styled.input`

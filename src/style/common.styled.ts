@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
 export const StyledCommonContainer = styled.div`
-  height: 50%;
-  width: 80%;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  height: 80%;
+  width: 100%;
   border: 1px soild black;
   border-radius: 10px;
-  padding: 50px;
 `
 
 export const StyledCommonInput = styled.input`

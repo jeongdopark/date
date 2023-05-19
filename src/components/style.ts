@@ -76,7 +76,6 @@ const FooterContainer = styled.div`
   width: 80%;
   height: 50px;
   padding: 0px 50px;
-  background-color: aqua;
 `
 
 export const S = {

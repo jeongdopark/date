@@ -27,7 +27,7 @@ const Button = styled(StyledCommonButton)`
 const TabContainer = styled.div`
   display: flex;
   width: 100%;
-  height: 50px;
+  height: 100px;
 `
 
 const TabElement = styled.div`
@@ -40,7 +40,7 @@ const TabElement = styled.div`
 
 const ContentWrapper = styled.div`
   width: 100%;
-  height: 100%;
+  height: 90%;
   display: flex;
   justify-content: center;
 `

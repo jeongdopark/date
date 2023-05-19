@@ -4,7 +4,7 @@ import { ACCESS_TOKEN } from '../util/constants'
 import { APIError } from '../@types/api'
 
 export const instance = axios.create({
-  baseURL: 'http://52.79.226.246',
+  baseURL: process.env.REACT_APP_BASE_URL,
   headers: { 'Content-Type': 'application/json' },
 })
 

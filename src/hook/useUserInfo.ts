@@ -9,6 +9,7 @@ export const useUserInfo = () => {
 
   const getUserInfos = async () => {
     const res = await getUserInfo()
+
     if (res.isSuccess) {
       setUserNickname(res.data.nickname)
       setUserImg(res.data.profileImgUrl)

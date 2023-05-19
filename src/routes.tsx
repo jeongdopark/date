@@ -5,6 +5,7 @@ import SignUp from './pages/SignUp'
 import MyPage from './pages/MyPage'
 import Footer from './components/common/Footer'
 import LikeList from './pages/LikeList'
+import Choice from './pages/Choice'
 import { S } from './style/center.styled'
 
 const AppRouter: React.FC = (): JSX.Element => {
@@ -16,6 +17,7 @@ const AppRouter: React.FC = (): JSX.Element => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/likelist" element={<LikeList />} />
+          <Route path="/choice" element={<Choice />} />
         </Routes>
         <Footer />
       </S.Center>

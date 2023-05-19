@@ -9,13 +9,13 @@ const Footer = () => {
 
   return (
     <S.FooterContainer>
-      <div onClick={() => navigator('mypage')}>
+      <div onClick={() => navigator('likelist')}>
         <HeartIcon />
       </div>
-      <div onClick={() => navigator('mypage')}>
+      <div onClick={() => navigator('choice')}>
         <SwipperIcon />
       </div>
-      <div onClick={() => navigator('signin')}>
+      <div onClick={() => navigator('mypage')}>
         <UserIcon />
       </div>
     </S.FooterContainer>

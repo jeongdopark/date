@@ -5,7 +5,7 @@ const useTab = () => {
   const [tabIndex, setTabIndex] = useState<number>(0)
   const tab_obj = [
     { name: 'Send', content: <SendList listType={'send'} /> },
-    { name: 'Receive', content: <SendList listType={'receive'} /> },
+    { name: 'Receieve', content: <SendList listType={'receieve'} /> },
   ]
 
   const onChangeTabIndex = (idx: number) => {

@@ -24,8 +24,32 @@ const Button = styled(StyledCommonButton)`
   height: 50px;
 `
 
+const TabContainer = styled.div`
+  display: flex;
+  width: 100%;
+  height: 50px;
+`
+
+const TabElement = styled.div`
+  width: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const ContentWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+`
+
 export const S = {
   Title,
   Container,
   Button,
+  TabContainer,
+  ContentWrapper,
+  TabElement,
 }

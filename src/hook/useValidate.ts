@@ -21,28 +21,28 @@ export const useValidate = () => {
 
       switch (name) {
         case 'userId':
-          if (value.length < 5 && value.length !== 0) {
+          if (value.length < 4 && value.length !== 0) {
             message.current.value[
               name
-            ] = `${name}는 5자 이상으로 입력해 주세요.`
+            ] = `${name}는 4자 이상으로 입력해 주세요.`
           } else {
             message.current.value[name] = ''
           }
           break
         case 'password':
-          if (value.length < 5 && value.length !== 0) {
+          if (value.length < 4 && value.length !== 0) {
             message.current.value[
               name
-            ] = `${name}는 5자 이상으로 입력해 주세요.`
+            ] = `${name}는 4자 이상으로 입력해 주세요.`
           } else {
             message.current.value[name] = ''
           }
           break
         case 'nickname':
-          if (value.length < 5 && value.length !== 0) {
+          if (value.length < 4 && value.length !== 0) {
             message.current.value[
               name
-            ] = `${name}는 5자 이상으로 입력해 주세요.`
+            ] = `${name}는 4자 이상으로 입력해 주세요.`
           } else {
             message.current.value[name] = ''
           }

@@ -3,6 +3,7 @@ import { useValidate } from '../../hook/useValidate'
 import { signUp } from '../../api/auth'
 import { useNavigate } from 'react-router'
 import FormElement from './FormElement'
+import { toast } from 'react-toastify'
 
 const SignUpForm = () => {
   const [inputValue, inputOnChange, warnMessage] = useValidate()
@@ -13,6 +14,7 @@ const SignUpForm = () => {
     e.preventDefault()
     const res = await signUp(inputValue)
     if (res.isSuccess) {
+      toast('회원가입 완료')
       navigate('/signIn')
     }
   }

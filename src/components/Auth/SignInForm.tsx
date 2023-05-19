@@ -5,6 +5,7 @@ import token from '../../util/token'
 import { ACCESS_TOKEN, REFRESH_TOKEN } from '../../util/constants'
 import { useNavigate } from 'react-router'
 import FormElement from './FormElement'
+import { toast } from 'react-toastify'
 
 const SignInForm = () => {
   const [inputValue, inputOnChange, warnMessage] = useValidate()
@@ -16,6 +17,7 @@ const SignInForm = () => {
     if (res.isSuccess) {
       token.set(ACCESS_TOKEN, res.data[ACCESS_TOKEN])
       token.set(REFRESH_TOKEN, res.data[REFRESH_TOKEN])
+      toast('로그인 완료')
       navigate('/mypage')
     }
   }

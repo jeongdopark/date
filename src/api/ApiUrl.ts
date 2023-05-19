@@ -15,7 +15,7 @@ class ApiUrl {
 
   static dislike = '/affinity/dislike'
 
-  static likeList = '/affinity/list'
+  static affinityList = '/affinity/list'
 }
 
 export default Object.freeze(ApiUrl)

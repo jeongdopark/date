@@ -21,9 +21,9 @@ const UserImg = ({
         <div style={{ marginBottom: '30px' }}>{userNickname}</div>
         <button onClick={onClickModalShow}>edit</button>
       </S.EditContainer>
-      {modalShow ? (
+      {modalShow && (
         <UpdateModal userNickname={userNickname} modalRef={modalRef} />
-      ) : null}
+      )}
     </React.Fragment>
   )
 }

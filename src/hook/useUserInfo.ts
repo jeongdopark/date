@@ -6,6 +6,7 @@ export const useUserInfo = () => {
   const [userNickname, setUserNickname] = useState<string>('')
   const [userImg, setUserImg] = useState<string>('')
   const [userId, setUserId] = useState<string>('')
+  const [trigger, setTrigger] = useState<boolean>(false)
 
   const getUserInfos = async () => {
     const res = await getUserInfo()
@@ -17,5 +18,5 @@ export const useUserInfo = () => {
     }
   }
 
-  return { getUserInfos, userNickname, userImg, userId }
+  return { getUserInfos, userNickname, userImg, setTrigger, trigger }
 }

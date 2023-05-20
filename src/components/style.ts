@@ -79,9 +79,10 @@ const ModalInnerContainer = styled.div`
 const FooterContainer = styled.div`
   display: flex;
   justify-content: space-around;
-  width: 80%;
+  width: 100%;
   height: 50px;
   padding: 0px 50px;
+  background-color: white;
 `
 
 export const S = {

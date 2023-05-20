@@ -15,7 +15,7 @@ export interface SignInResponse {
   refreshToken: string
 }
 
-export interface GetUserInfo {
+export interface UserInfo {
   nickname: string
   profileImgUrl: string
   userId: string

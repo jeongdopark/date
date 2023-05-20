@@ -25,5 +25,5 @@ export const useModalShow = <T extends HTMLElement>() => {
     }
   })
 
-  return { modalRef, modalShow, onClickModalShow }
+  return { modalRef, modalShow, onClickModalShow, setModalShow }
 }

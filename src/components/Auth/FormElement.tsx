@@ -20,6 +20,7 @@ const FormElement = ({
   type: ElementType
   warnMessage: React.MutableRefObject<WarnMsgType>
 }) => {
+  //FIXME
   const typeObj = {
     userId: {
       title: 'ID',

@@ -6,11 +6,15 @@ import { S } from '../style'
 const UpdateModal = ({
   userNickname,
   modalRef,
+  setModalShow,
+  setTrigger,
 }: {
   userNickname: string
   modalRef: any
+  setModalShow: React.Dispatch<React.SetStateAction<boolean>>
+  setTrigger: React.Dispatch<React.SetStateAction<boolean>>
 }) => {
-  const [nicknameValue, onChange] = useInput(userNickname)
+  const { inputValue, onChange } = useInput(userNickname)
   const [imgFile, setImgFile] = useState<string>('')
 
   const updateUserImg = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,11 +22,16 @@ const UpdateModal = ({
   }
 
   const handleUpdateUserInfo = async () => {
-    const res = await updateUserInfo({
-      nickname: nicknameValue,
-      profileImgUrl: imgFile,
-    })
-    if (res?.isSuccess) {
+    try {
+      await updateUserInfo({
+        nickname: inputValue.nickname,
+        profileImgUrl: inputValue.url,
+      })
+    } catch (error) {
+      console.log(error)
+    } finally {
+      setModalShow(false)
+      setTrigger((prev) => !prev)
     }
   }
 
@@ -31,15 +40,17 @@ const UpdateModal = ({
       <S.ModalInnerContainer ref={modalRef}>
         <S.Title>닉네임 변경</S.Title>
         <S.Input
+          name={'nickname'}
           onChange={onChange}
-          value={nicknameValue}
+          value={inputValue.nickname}
           placeholder="닉네임 변경하기"
         />
         <S.Title>프로필 이미지 변경</S.Title>
-        <input
+        <S.Input
+          name={'url'}
+          value={inputValue.url}
           style={{ marginBottom: '30px' }}
-          type="file"
-          onChange={updateUserImg}
+          onChange={onChange}
         />
         <S.Button onClick={handleUpdateUserInfo}>내 정보 변경하기</S.Button>
       </S.ModalInnerContainer>

@@ -1,11 +1,20 @@
 import { useState } from 'react'
 
+interface IInputValue {
+  nickname: string
+  url: string
+}
+
 export const useInput = (initialValue: string) => {
-  const [value, setValue] = useState<string>(initialValue)
+  const [inputValue, setInputValue] = useState<IInputValue>({
+    nickname: initialValue,
+    url: '',
+  })
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value)
+    const { name, value } = e.target
+    setInputValue({ ...inputValue, [name]: value })
   }
 
-  return [value, onChange] as const
+  return { inputValue, onChange }
 }

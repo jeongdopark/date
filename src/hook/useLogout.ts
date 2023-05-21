@@ -10,7 +10,7 @@ const useLogout = () => {
     storage.remove(REFRESH_TOKEN)
     storage.remove(ACCESS_TOKEN)
     toast('로그아웃 완료')
-    navigate(PATH_NAME.SIGN_IN)
+    navigate(PATH_NAME.MAIN)
   }
 
   return { logout }

@@ -4,6 +4,7 @@ import storage from '../util/localStorage'
 import { ACCESS_TOKEN, REFRESH_TOKEN } from '../util/constants'
 import { APIError } from '../@types/api'
 import ApiUrl from './ApiUrl'
+import { toast } from 'react-toastify'
 
 export const instance = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL,
@@ -54,7 +55,7 @@ instance.interceptors.response.use(
         })
     }
 
-    console.log('response error', error)
+    toast(error.response.data.message)
     return Promise.reject(error)
   },
 )

@@ -7,7 +7,7 @@ import ApiUrl from './ApiUrl'
 import { toast } from 'react-toastify'
 
 export const instance = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL,
+  baseURL: 'http://52.79.226.246',
   headers: { 'Content-Type': 'application/json' },
 })
 

@@ -1,6 +1,8 @@
 import { useRef, useState, useCallback } from 'react'
+import { NICKNAME, PASSWORD, USER_ID } from '../util/constants'
 
 export const useValidate = () => {
+  const [valid, setValid] = useState<boolean>(true)
   const [inputValue, setInputValue] = useState({
     nickname: '',
     userId: '',
@@ -20,31 +22,49 @@ export const useValidate = () => {
       setInputValue({ ...inputValue, [name]: value })
 
       switch (name) {
-        case 'userId':
-          if (value.length < 4 && value.length !== 0) {
+        case USER_ID:
+          if (
+            (value.length < 3 && value.length !== 0) ||
+            value.length > 10 ||
+            /[~!@#$%^&*()_+|<>?:{}]/.test(value)
+          ) {
             message.current.value[
               name
-            ] = `${name}는 4자 이상으로 입력해 주세요.`
+            ] = `${name}는 3글자 - 10글자여야 하며, 특수문자 ❌`
+            setValid(true)
           } else {
             message.current.value[name] = ''
+            setValid(false)
           }
           break
-        case 'password':
-          if (value.length < 4 && value.length !== 0) {
+        case PASSWORD:
+          if (
+            (value.length < 3 && value.length !== 0) ||
+            value.length > 10 ||
+            /[~!@#$%^&*()_+|<>?:{}]/.test(value)
+          ) {
             message.current.value[
               name
-            ] = `${name}는 4자 이상으로 입력해 주세요.`
+            ] = `${name}는 3글자 - 10글자여야 하며, 특수문자 ❌`
+            setValid(true)
           } else {
             message.current.value[name] = ''
+            setValid(false)
           }
           break
-        case 'nickname':
-          if (value.length < 4 && value.length !== 0) {
+        case NICKNAME:
+          if (
+            (value.length < 3 && value.length !== 0) ||
+            value.length > 10 ||
+            /[~!@#$%^&*()_+|<>?:{}]/.test(value)
+          ) {
             message.current.value[
               name
-            ] = `${name}는 4자 이상으로 입력해 주세요.`
+            ] = `${name}는 3글자 - 10글자여야 하며, 특수문자 ❌`
+            setValid(true)
           } else {
             message.current.value[name] = ''
+            setValid(false)
           }
           break
       }
@@ -52,5 +72,5 @@ export const useValidate = () => {
     [inputValue],
   )
 
-  return [inputValue, validator, message] as const
+  return [inputValue, validator, message, valid] as const
 }

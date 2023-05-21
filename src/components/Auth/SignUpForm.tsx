@@ -4,6 +4,7 @@ import { signUp } from '../../api/auth'
 import { useNavigate } from 'react-router'
 import FormElement from './FormElement'
 import { toast } from 'react-toastify'
+import { NICKNAME, PASSWORD, PATH_NAME, USER_ID } from '../../util/constants'
 
 const SignUpForm = () => {
   const [inputValue, inputOnChange, warnMessage] = useValidate()
@@ -14,24 +15,24 @@ const SignUpForm = () => {
     const res = await signUp(inputValue)
     if (res.isSuccess) {
       toast('회원가입 완료')
-      navigate('/signIn')
+      navigate(PATH_NAME.SIGN_IN)
     }
   }
 
   return (
     <S.FormContainer onSubmit={handleSubmit}>
       <FormElement
-        type={'userId'}
+        type={USER_ID}
         inputOnChange={inputOnChange}
         warnMessage={warnMessage}
       />
       <FormElement
-        type={'password'}
+        type={PASSWORD}
         inputOnChange={inputOnChange}
         warnMessage={warnMessage}
       />
       <FormElement
-        type={'nickname'}
+        type={NICKNAME}
         inputOnChange={inputOnChange}
         warnMessage={warnMessage}
       />

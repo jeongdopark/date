@@ -2,6 +2,7 @@ import { useState, useRef } from 'react'
 import { updateUserInfo } from '../../api/user'
 import { useInput } from '../../hook/useInput'
 import { S } from '../style'
+import { NICKNAME, PROFILE_IMG_URL } from '../../util/constants'
 
 const UpdateModal = ({
   userNickname,
@@ -25,7 +26,7 @@ const UpdateModal = ({
     try {
       await updateUserInfo({
         nickname: inputValue.nickname,
-        profileImgUrl: inputValue.url,
+        profileImgUrl: inputValue.profileImgUrl,
       })
     } catch (error) {
       console.log(error)
@@ -40,15 +41,15 @@ const UpdateModal = ({
       <S.ModalInnerContainer ref={modalRef}>
         <S.Title>닉네임 변경</S.Title>
         <S.Input
-          name={'nickname'}
+          name={NICKNAME}
           onChange={onChange}
           value={inputValue.nickname}
           placeholder="닉네임 변경하기"
         />
         <S.Title>프로필 이미지 변경</S.Title>
         <S.Input
-          name={'url'}
-          value={inputValue.url}
+          name={PROFILE_IMG_URL}
+          value={inputValue.profileImgUrl}
           style={{ marginBottom: '30px' }}
           onChange={onChange}
         />

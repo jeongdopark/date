@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router'
 import storage from '../util/localStorage'
-import { REFRESH_TOKEN, ACCESS_TOKEN } from '../util/constants'
+import { REFRESH_TOKEN, ACCESS_TOKEN, PATH_NAME } from '../util/constants'
 import { toast } from 'react-toastify'
 
 const useLogout = () => {
@@ -10,7 +10,7 @@ const useLogout = () => {
     storage.remove(REFRESH_TOKEN)
     storage.remove(ACCESS_TOKEN)
     toast('로그아웃 완료')
-    navigate('/signin')
+    navigate(PATH_NAME.SIGN_IN)
   }
 
   return { logout }

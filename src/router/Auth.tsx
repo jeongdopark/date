@@ -3,6 +3,7 @@ import { Navigate, Outlet, useLocation } from 'react-router'
 import token from '../util/token'
 import { ACCESS_TOKEN, PATH_NAME } from '../util/constants'
 import Footer from '../components/common/Footer'
+import NotFound from '../pages/NotFound'
 
 const PRIVATE_ROUTES = [
   PATH_NAME.LIKELIST,
@@ -21,7 +22,7 @@ const Auth = () => {
 
   if (isPrivateRoute) {
     if (!accessToken) {
-      return <Navigate to="/signin" />
+      return <Navigate to={PATH_NAME.SIGN_IN} />
     }
     return (
       <React.Fragment>
@@ -33,12 +34,12 @@ const Auth = () => {
 
   if (isPublicRoute) {
     if (accessToken) {
-      return <Navigate to="/mypage" />
+      return <Navigate to={PATH_NAME.MYPAGE} />
     }
     return <Outlet />
   }
 
-  return <div></div>
+  return <NotFound />
 }
 
 export default Auth

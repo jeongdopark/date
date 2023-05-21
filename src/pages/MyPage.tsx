@@ -1,22 +1,24 @@
 import { S } from './style'
-import { useEffect } from 'react'
 import { useNavigate } from 'react-router'
 import UserImg from '../components/Mypage/UserImg'
 import useLogout from '../hook/useLogout'
-import { SEND_IDX, RECEIVE_IDX } from '../util/constants'
+import { PATH_NAME } from '../util/constants'
 
 const MyPage = () => {
   const navigate = useNavigate()
   const { logout } = useLogout()
+
+  const SEND_TYPE_IDX = 0
+  const RECEIVE_TYPE_IDX = 1
 
   return (
     <S.Container>
       <UserImg />
       <S.Button
         onClick={() =>
-          navigate('/likelist', {
+          navigate(PATH_NAME.LIKELIST, {
             state: {
-              tabIdx: SEND_IDX,
+              tabIdx: SEND_TYPE_IDX,
             },
           })
         }
@@ -25,9 +27,9 @@ const MyPage = () => {
       </S.Button>
       <S.Button
         onClick={() =>
-          navigate('/likelist', {
+          navigate(PATH_NAME.LIKELIST, {
             state: {
-              tabIdx: RECEIVE_IDX,
+              tabIdx: RECEIVE_TYPE_IDX,
             },
           })
         }

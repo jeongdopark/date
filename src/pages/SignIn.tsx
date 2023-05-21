@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router'
 import SignInForm from '../components/Auth/SignInForm'
 import { S } from './style'
+import { PATH_NAME } from '../util/constants'
 
 const SignIn = () => {
   const navigate = useNavigate()
@@ -8,7 +9,9 @@ const SignIn = () => {
     <S.Container>
       <S.Title>Sign In</S.Title>
       <SignInForm />
-      <S.Button onClick={() => navigate('/signUp')}>Go Sign Up</S.Button>
+      <S.Button onClick={() => navigate(PATH_NAME.SIGN_UP)}>
+        Go Sign Up
+      </S.Button>
     </S.Container>
   )
 }

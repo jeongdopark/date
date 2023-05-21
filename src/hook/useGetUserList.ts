@@ -61,7 +61,6 @@ const useGetUserList = () => {
     if (userList.length === 0) return
     setCurrentUser(userList[currentIndex])
   }, [currentIndex, userList])
-  console.log(currentIndex)
 
   return {
     userList,

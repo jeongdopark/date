@@ -1,5 +1,11 @@
 <br/>
 
+## 📌 배포 사이트
+
+https://numble-react.netlify.app
+
+<br>
+
 ## 📌 프로젝트 실행 방법
 
 1. Clone the repo
@@ -174,7 +180,7 @@ const Auth = () => {
 }
 ```
 
-가장 최상단에 Auth 컴포넌트를 두고 로그인 체크를 했습니다.
+가장 최상단에 Auth 컴포넌트를 두고 accessToken 체크를 했습니다.
 
 </div>
 </details>

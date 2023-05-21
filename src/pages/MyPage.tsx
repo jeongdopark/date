@@ -1,6 +1,6 @@
 import { S } from './style'
 import { useNavigate } from 'react-router'
-import UserImg from '../components/Mypage/UserImg'
+import UserInfo from '../components/Mypage/UserInfo'
 import useLogout from '../hook/useLogout'
 import { PATH_NAME } from '../util/constants'
 
@@ -13,7 +13,7 @@ const MyPage = () => {
 
   return (
     <S.Container>
-      <UserImg />
+      <UserInfo />
       <S.Button
         onClick={() =>
           navigate(PATH_NAME.LIKELIST, {
@@ -23,7 +23,7 @@ const MyPage = () => {
           })
         }
       >
-        내가 좋아하는 사람
+        📤 Send List
       </S.Button>
       <S.Button
         onClick={() =>
@@ -34,9 +34,9 @@ const MyPage = () => {
           })
         }
       >
-        나를 좋아하는 사람
+        📥 Receive List
       </S.Button>
-      <S.Button onClick={logout}>로그아웃</S.Button>
+      <S.Button onClick={logout}>👋 Log out</S.Button>
     </S.Container>
   )
 }

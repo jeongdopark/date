@@ -4,7 +4,7 @@ import UpdateModal from './UpdateModal'
 import { useModalShow } from '../../hook/useModalShow'
 import { useUserInfo } from '../../hook/useUserInfo'
 
-const UserImg = () => {
+const UserInfo = () => {
   const { modalRef, modalShow, onClickModalShow, setModalShow } = useModalShow()
   const { getUserInfos, userNickname, userImg, setTrigger, trigger } =
     useUserInfo()
@@ -17,10 +17,10 @@ const UserImg = () => {
     <React.Fragment>
       <S.ImgContainer>
         <S.Img src={userImg} />
-        <div style={{ marginBottom: '30px' }}>{userNickname}</div>
+        <div>{userNickname}</div>
       </S.ImgContainer>
       <S.EditContainer>
-        <button onClick={onClickModalShow}>edit</button>
+        <button onClick={onClickModalShow}>⚙️ Update UserInfo</button>
       </S.EditContainer>
       {modalShow && (
         <UpdateModal
@@ -34,4 +34,4 @@ const UserImg = () => {
   )
 }
 
-export default UserImg
+export default UserInfo

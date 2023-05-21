@@ -2,13 +2,13 @@ import { useState } from 'react'
 
 interface IInputValue {
   nickname: string
-  url: string
+  profileImgUrl: string
 }
 
 export const useInput = (initialValue: string) => {
   const [inputValue, setInputValue] = useState<IInputValue>({
     nickname: initialValue,
-    url: '',
+    profileImgUrl: '',
   })
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {

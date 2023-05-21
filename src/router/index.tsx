@@ -1,4 +1,3 @@
-import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import SignIn from '../pages/SignIn'
 import SignUp from '../pages/SignUp'

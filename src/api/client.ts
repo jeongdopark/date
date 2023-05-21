@@ -1,7 +1,7 @@
 import axios, { InternalAxiosRequestConfig, AxiosError } from 'axios'
 import token from '../util/token'
 import storage from '../util/localStorage'
-import { ACCESS_TOKEN } from '../util/constants'
+import { ACCESS_TOKEN, REFRESH_TOKEN } from '../util/constants'
 import { APIError } from '../@types/api'
 import ApiUrl from './ApiUrl'
 
@@ -35,30 +35,25 @@ instance.interceptors.response.use(
       config,
       response: { status },
     } = error
-    if (status === 419) {
-      if (error.response.data.message === 'expired') {
-        const originalRequest = config
-        const refreshToken = localStorage.getItem('refreshToken')
-        // token refresh 요청
-        const { data } = await instance.post(
-          ApiUrl.refreshToken, // token refresh api
-          { refresh: refreshToken },
-          { headers: { authorization: refreshToken } },
-        )
-        // 새로운 토큰 저장
-        // dispatch(userSlice.actions.setAccessToken(data.data.accessToken)); store에 저장
-        const { accessToken: newAccessToken } = data
-        storage.set('accessToken', newAccessToken)
-        originalRequest.headers.authorization = newAccessToken
-        alert('refresh')
-        console.log('refresh')
 
-        // 401로 요청 실패했던 요청 새로운 accessToken으로 재요청
-        return axios(originalRequest)
-      }
+    // 만료된 토큰일 경우
+    if (status === 419) {
+      const originalRequest = config
+      const refreshToken = storage.get(REFRESH_TOKEN)
+      // refresh token Post API 호출
+      return await instance
+        .post(ApiUrl.refreshToken, {
+          refresh: refreshToken,
+        })
+        .then((res) => {
+          if (res.status === 200) {
+            storage.set(ACCESS_TOKEN, res.data[ACCESS_TOKEN])
+            originalRequest.header.authorization = res.data[ACCESS_TOKEN]
+            return axios(originalRequest)
+          }
+        })
     }
-    // Any status codes that falls outside the range of 2xx cause this function to trigger
-    // Do something with response error
+
     console.log('response error', error)
     return Promise.reject(error)
   },

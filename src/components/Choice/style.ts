@@ -14,6 +14,7 @@ const ListElement = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
   }
 
   div {
@@ -23,20 +24,27 @@ const ListElement = styled.div`
 `
 
 const ButtonContainer = styled.div`
-  width: 100%;
+  width: 50%;
   height: 150px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+`
 
-  button {
-    width: 20%;
-    height: 70px;
-  }
+const Button = styled.button<{ color: string }>`
+  width: 30%;
+  height: 50px;
+  border-radius: 7px;
+  background-color: transparent;
+  border: ${(props) =>
+    props.color === 'like' ? '1px solid green' : '1px solid red'};
+  cursor: pointer;
+  box-shadow: 0 0px 100px rgba(0, 0, 0, 0.1);
 `
 
 export const S = {
   Container,
   ListElement,
   ButtonContainer,
+  Button,
 }

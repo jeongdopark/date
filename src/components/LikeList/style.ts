@@ -78,4 +78,28 @@ const Button = styled.button`
   }
 `
 
-export const S = { Container, Element, UserInfo, Img, Nickname, Button }
+const TabContainer = styled.div`
+  display: flex;
+  width: 100%;
+  height: 70px;
+  background-color: aqua;
+`
+
+const TabElement = styled.div<{ isSelected: boolean }>`
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${(props) => (props.isSelected ? '#adb5bd' : 'white')};
+`
+
+export const S = {
+  Container,
+  Element,
+  UserInfo,
+  Img,
+  Nickname,
+  Button,
+  TabContainer,
+  TabElement,
+}

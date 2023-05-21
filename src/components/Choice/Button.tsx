@@ -10,10 +10,15 @@ interface IProps {
 const Button = ({ handleLike, handleDislike, currentUser }: IProps) => {
   return (
     <S.ButtonContainer>
-      <button onClick={() => handleLike(currentUser.userId)}>LIKE 👍</button>
-      <button onClick={() => handleDislike(currentUser.userId)}>
+      <S.Button color={'like'} onClick={() => handleLike(currentUser.userId)}>
+        LIKE 👍
+      </S.Button>
+      <S.Button
+        color={'dislike'}
+        onClick={() => handleDislike(currentUser.userId)}
+      >
         DISLIKE 👎
-      </button>
+      </S.Button>
     </S.ButtonContainer>
   )
 }

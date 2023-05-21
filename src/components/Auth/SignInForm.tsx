@@ -1,12 +1,12 @@
 import { S } from '../style'
 import { useValidate } from '../../hook/useValidate'
-import { PASSWORD, USER_ID } from '../../util/constants'
+import { PASSWORD, USER_ID, SIGN_IN } from '../../util/constants'
 import FormElement from './FormElement'
 import useHandleSubmit from '../../hook/useHandleSubmit'
 
 const SignInForm = () => {
   const [inputValue, inputOnChange, warnMessage, valid] = useValidate()
-  const { handleSubmit } = useHandleSubmit(inputValue)
+  const { handleSubmit } = useHandleSubmit(inputValue, SIGN_IN)
 
   return (
     <S.FormContainer onSubmit={handleSubmit}>

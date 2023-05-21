@@ -108,7 +108,7 @@ axios interceptors로 refreshToken 처리를 했습니다.
 <div>
 
 ```ts
-// Auth.tsx
+// index.tsx
 const router = createBrowserRouter([
   {
     path: '/',
@@ -146,7 +146,7 @@ const router = createBrowserRouter([
 createBrowserRouter 적용해 봤습니다.
 
 ```ts
-//index.tsx
+//Auth.tsx
 const PRIVATE_ROUTES = [PATH_NAME.LIKELIST, PATH_NAME.MYPAGE, PATH_NAME.CHOICE]
 const PUBLIC_ROUTES = [PATH_NAME.MAIN, PATH_NAME.SIGN_IN, PATH_NAME.SIGN_UP]
 

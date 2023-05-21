@@ -1,5 +1,6 @@
 import React from 'react'
 import { S } from '../style'
+import { PASSWORD } from '../../util/constants'
 
 type ElementType = 'userId' | 'password' | 'nickname'
 
@@ -22,12 +23,23 @@ const FormElement = ({
 }) => {
   return (
     <React.Fragment>
-      <S.Title>{type}</S.Title>
-      <S.Input
-        name={type}
-        onChange={inputOnChange}
-        placeholder={`${type} 입력해 주세요.`}
-      />
+      <S.InputContainer>
+        <S.Label>{type}</S.Label>
+        {type === PASSWORD ? (
+          <S.FormInput
+            type={PASSWORD}
+            name={type}
+            onChange={inputOnChange}
+            placeholder={`${type} 입력해 주세요.`}
+          />
+        ) : (
+          <S.FormInput
+            name={type}
+            onChange={inputOnChange}
+            placeholder={`${type} 입력해 주세요.`}
+          />
+        )}
+      </S.InputContainer>
       <S.WarnMessage>{warnMessage.current.value[type]}</S.WarnMessage>
     </React.Fragment>
   )

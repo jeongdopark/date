@@ -17,11 +17,27 @@ const Title = styled(StyledCommonTitle)`
   margin-bottom: 10px;
   margin: 0 auto;
 `
+const Label = styled.div`
+  width: 10px;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 150px;
+`
 const Input = styled(StyledCommonInput)`
   margin-bottom: 10px;
   border: 1px solid black;
   width: 50%;
   margin: 0 auto;
+`
+
+const FormInput = styled.input`
+  margin-bottom: 10px;
+  width: 40%;
+  margin: 0 auto;
+  outline: none;
+  border: none;
+  height: 50px;
+  border-bottom: 0.5px solid gray;
 `
 const Button = styled(StyledCommonButton)`
   margin: 0 auto;
@@ -109,7 +125,13 @@ const FooterContainer = styled.div`
   background-color: white;
 `
 
+const InputContainer = styled.div`
+  display: flex;
+  align-items: center;
+`
+
 export const S = {
+  InputContainer,
   FormContainer,
   Title,
   Input,
@@ -121,4 +143,6 @@ export const S = {
   ModalContainer,
   ModalInnerContainer,
   FooterContainer,
+  FormInput,
+  Label,
 }

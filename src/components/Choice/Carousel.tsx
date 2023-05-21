@@ -1,10 +1,8 @@
-import { useState, useEffect } from 'react'
 import { S } from './style'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import './custom.css'
-import useGetUserList from '../../hook/useGetUserList'
 import { UserInfo } from '../../@types/api'
 
 interface IProps {

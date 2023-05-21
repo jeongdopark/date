@@ -1,4 +1,3 @@
-import { useState, useRef } from 'react'
 import { updateUserInfo } from '../../api/user'
 import { useInput } from '../../hook/useInput'
 import { S } from '../style'
@@ -16,11 +15,6 @@ const UpdateModal = ({
   setTrigger: React.Dispatch<React.SetStateAction<boolean>>
 }) => {
   const { inputValue, onChange } = useInput(userNickname)
-  const [imgFile, setImgFile] = useState<string>('')
-
-  const updateUserImg = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.files![0])
-  }
 
   const handleUpdateUserInfo = async () => {
     try {

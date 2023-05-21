@@ -17,7 +17,6 @@ const UpdateModal = ({
 }) => {
   const { inputValue, onChange } = useInput(userNickname)
   const [nickNameValue, OnChangeNickName, warnMessage, valid] = useValidate()
-  console.log(nickNameValue[NICKNAME], warnMessage, valid)
 
   const handleUpdateUserInfo = async () => {
     try {

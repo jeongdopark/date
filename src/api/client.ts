@@ -6,8 +6,13 @@ import { APIError } from '../@types/api'
 import ApiUrl from './ApiUrl'
 import { toast } from 'react-toastify'
 
+const host =
+  window.location.hostname === 'localhost'
+    ? 'http://http://52.79.226.246'
+    : 'api'
+
 export const instance = axios.create({
-  baseURL: 'http://52.79.226.246',
+  baseURL: host,
   headers: { 'Content-Type': 'application/json' },
 })
 

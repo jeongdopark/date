@@ -17,12 +17,13 @@ const UpdateModal = ({
 }) => {
   const { inputValue, onChange } = useInput(userNickname)
   const [nickNameValue, OnChangeNickName, warnMessage, valid] = useValidate()
+  console.log(nickNameValue[NICKNAME], warnMessage, valid)
 
   const handleUpdateUserInfo = async () => {
     try {
       await updateUserInfo({
-        nickname: inputValue.nickname,
-        profileImgUrl: inputValue.profileImgUrl,
+        nickname: nickNameValue[NICKNAME],
+        profileImgUrl: inputValue[PROFILE_IMG_URL],
       })
     } catch (error) {
       console.log(error)

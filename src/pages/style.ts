@@ -23,21 +23,9 @@ const Button = styled(StyledCommonButton)`
   margin-bottom: 20px;
   height: 50px;
   width: 50%;
-`
-
-const TabContainer = styled.div`
-  display: flex;
-  width: 100%;
-  height: 70px;
-  background-color: aqua;
-`
-
-const TabElement = styled.div<{ isSelected: boolean }>`
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ${(props) => (props.isSelected ? '#adb5bd' : 'white')};
+  border: none;
+  border-radius: 10px;
+  background-color: gainsboro;
 `
 
 const ContentWrapper = styled.div`
@@ -51,7 +39,5 @@ export const S = {
   Title,
   Container,
   Button,
-  TabContainer,
   ContentWrapper,
-  TabElement,
 }

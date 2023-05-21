@@ -27,27 +27,51 @@ const Button = styled(StyledCommonButton)`
   margin: 0 auto;
   margin-bottom: 20px;
   width: 50%;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0px 100px rgba(0, 0, 0, 0.1);
+  border: 1px solid gainsboro;
 `
-const WarnMessage = styled.span`
-  margin: 0 auto;
+const WarnMessage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  font-size: 13px;
 `
 
 const ImgContainer = styled.div`
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  width: 150px;
+  height: 150px;
   margin-bottom: 50px;
+
+  div {
+    margin-bottom: 30px;
+    text-align: center;
+    margin-top: 15px;
+  }
 `
 
 const Img = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 10px;
 `
 
 const EditContainer = styled.div`
   display: flex;
   align-items: center;
+
+  button {
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: none;
+    cursor: pointer;
+  }
 `
 
 const ModalContainer = styled.div`

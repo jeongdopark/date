@@ -7,9 +7,7 @@ import ApiUrl from './ApiUrl'
 import { toast } from 'react-toastify'
 
 const host =
-  window.location.hostname === 'localhost'
-    ? 'http://http://52.79.226.246'
-    : 'api'
+  window.location.hostname === 'localhost' ? 'http://52.79.226.246' : 'api'
 
 export const instance = axios.create({
   baseURL: host,

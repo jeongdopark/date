@@ -8,7 +8,7 @@ import {
 } from '../../util/constants'
 type List = 'send' | 'receive'
 
-const SendList = ({ listType }: { listType: List }) => {
+const AffinityList = ({ listType }: { listType: List }) => {
   const { onClickCancel, affinityList } = useUpdateAffinityList()
 
   return (
@@ -28,4 +28,4 @@ const SendList = ({ listType }: { listType: List }) => {
   )
 }
 
-export default SendList
+export default AffinityList

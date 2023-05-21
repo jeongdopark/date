@@ -1,7 +1,7 @@
 import { S } from './style'
 import useUpdateAffinityList from '../../hook/useUpdateAffinityList'
 
-type List = 'send' | 'receieve'
+type List = 'send' | 'receive'
 
 const SendList = ({ listType }: { listType: List }) => {
   const { onClickCancel, affinityList } = useUpdateAffinityList()

@@ -3,7 +3,7 @@ import { getAffinityList, patchDisLike } from '../api/affinity'
 
 interface Affinity {
   send: AffinityElement[]
-  receieve: AffinityElement[]
+  receive: AffinityElement[]
 }
 
 interface AffinityElement {
@@ -15,7 +15,7 @@ interface AffinityElement {
 const useUpdateAffinityList = () => {
   const [affinityList, setAffinityList] = useState<Affinity>({
     send: [],
-    receieve: [],
+    receive: [],
   })
   const [getListTrigger, setGetListTrigger] = useState<boolean>(true)
 
@@ -24,7 +24,7 @@ const useUpdateAffinityList = () => {
       setAffinityList((prevState) => {
         return {
           send: [...res.data.send],
-          receieve: [...res.data.receieve],
+          receive: [...res.data.receieve],
         }
       })
     })

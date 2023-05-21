@@ -9,7 +9,7 @@ interface AffinityElement {
 
 interface GetAffinityListResponse {
   send: AffinityElement[]
-  receieve: AffinityElement[]
+  receive: AffinityElement[]
 }
 
 export const patchLike = (targetUserId: string) => {

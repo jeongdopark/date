@@ -15,4 +15,5 @@ export const PATH_NAME = {
   MYPAGE: '/mypage',
   LIKELIST: '/likelist',
   CHOICE: '/choice',
+  MAIN: '/',
 }

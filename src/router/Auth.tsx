@@ -11,7 +11,7 @@ const PRIVATE_ROUTES = [
   PATH_NAME.MYPAGE,
   PATH_NAME.CHOICE,
 ]
-const PUBLIC_ROUTES = [PATH_NAME.SIGN_IN, PATH_NAME.SIGN_UP]
+const PUBLIC_ROUTES = [PATH_NAME.MAIN, PATH_NAME.SIGN_IN, PATH_NAME.SIGN_UP]
 
 const Auth = () => {
   const { pathname } = useLocation()
